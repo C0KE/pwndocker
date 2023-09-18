@@ -5,7 +5,7 @@ A docker environment for pwn in ctf based on **phusion/baseimage:master-amd64**,
 ### Usage
 
 	docker-compose up -d
-	docker exec -it pwn_test /bin/bash
+	docker exec -it pwndocker /bin/bash
 
 
 ### included software

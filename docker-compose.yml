@@ -1,9 +1,15 @@
 version: '3'
 services:
-    pwn:
-        container_name: pwn_test
-        image: skysider/pwndocker
+    pwn_docker:
+        container_name: pwndocker
+        image: cokepwn/pwndocker:v1
+        security_opt:
+            - seccomp:unconfined
         cap_add:
             - SYS_PTRACE
+        volumes:
+            - "/mnt/hgfs/workspace/:/home/"
         ports:
             - "23946:23946"
+        tty: true
+        command: ["/bin/bash"]
